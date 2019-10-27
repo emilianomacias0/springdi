@@ -9,7 +9,7 @@ public class MiServicioComplejo implements IServicio{
 
 	@Override
 	public String proceso() {
-		return "Ejecutnado un proceso complejo";
+		return "Ejecutando un proceso complejo";
 	}
 
 }

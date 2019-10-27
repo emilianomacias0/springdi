@@ -1,6 +1,7 @@
 package com.emilianomacias0.app.di.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ public class IndexController {
 
 	//Por medio de inyeccion
 	@Autowired
+	@Qualifier("miserviciocomplejo")
 	private IServicio servicio;
 	
 	//Desde el contructor
