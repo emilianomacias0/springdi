@@ -2,6 +2,9 @@ package com.emilianomacias0.app.di.models.domain;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -16,6 +19,16 @@ public class Factura {
 	@Autowired
 	private List<ItemFactura> items;
 
+	@PostConstruct
+	public void inicializar() {
+		cliente.setNombre(cliente.getNombre().concat(" ").concat("Regina"));
+		descripcion = descripcion.concat(" del cliente ").concat(cliente.getNombre());
+	}
+	
+	@PreDestroy
+	public void destruir() {
+		System.out.println("Factura destruida ".concat(descripcion));
+	}
 	public String getDescripcion() {
 		return descripcion;
 	}
