@@ -1,0 +1,28 @@
+package com.emilianomacias0.app.di.models.domain;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Cliente {
+	@Value("${cliente.nombre}")
+	private String nombre;
+	@Value("${cliente.apellido}")
+	private String apellidos;
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+}
