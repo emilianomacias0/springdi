@@ -10,11 +10,27 @@ import com.emilianomacias0.app.di.models.servicios.IServicio;
 @Controller
 public class IndexController {
 
+	//Por medio de inyeccion
 	@Autowired
 	private IServicio servicio;
+	
+	//Desde el contructor
+	/*@Autowired
+	public IndexController(IServicio servicio) {
+		this.servicio = servicio;
+	}*/
+
 	@GetMapping({"","/","/index"})
 	public String index(Model model) {
 		model.addAttribute("objeto", servicio.proceso());
 		return "index";
 	}
+
+	//Por medio del setter
+	/*@Autowired
+	public void setServicio(IServicio servicio) {
+		this.servicio = servicio;
+	}*/
+	
+	
 }
